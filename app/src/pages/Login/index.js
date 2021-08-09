@@ -52,7 +52,7 @@ const Login = () => {
 
         <Text style={styles.textSignIt}>Novo por aqui? <Text style={styles.textSignItNow}>Assine agora.</Text></Text>
 
-        <Text style={styles.textSmall}>Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô.<Text style={styles.textAbout}>Saiba mais.</Text></Text>
+        <Text style={styles.textSmall}>Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô.<Text style={styles.textAbout}> Saiba mais.</Text></Text>
 
       </View>
     </>
