@@ -1,19 +1,44 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, ScrollView} from 'react-native';
+import { Button, Title } from 'react-native-paper';
 
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
+import ButtonVertical from '../../components/ButtonVerticalHero';
+import Previas from '../../components/Previas';
 
 import styles from './styles';
 
 const Home = () => {
   return (
     <>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Header/>
         <Hero/>
-      </View>
+
+        <View style={styles.menuHeader}>
+          <ButtonVertical icon="plus" text="Minha Lista" />
+
+          <Button
+            mode="contained"
+            icon="play"
+            color="#fff"
+            uppercase={false}
+            onPress={() => console.log('Pressed')}
+          >
+            Assistir
+          </Button>
+
+          <ButtonVertical icon="information-outline" text="Minha Lista" />
+        </View>
+
+        <View style={styles.previaContainer}>
+          <Title style={styles.previaTitle}>Prévias</Title>
+          <Previas/>
+        </View>
+
+      </ScrollView>
     </>
   );
 };
