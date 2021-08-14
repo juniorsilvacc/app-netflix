@@ -3,16 +3,31 @@ const Films = require('../models/Films');
 module.exports = {
   async createFilms(req, res){
 
-    const {title, actors, year, director, details} = req.body;
+    const {
+      title, 
+      year, 
+      description, 
+      actors, 
+      type, 
+      logo, 
+      thumb, 
+      gender, 
+      moments
+    } = req.body;
 
     try {
 
       const createdFilms = await Films.create({
         title, 
+        year,
+        description,
         actors, 
-        year, 
-        director,
-        details
+        type,
+        cover,
+        logo,
+        thumb,
+        gender,
+        moments
       });
 
       return res.status(200).json({message: 'Successfully registered movie', data: createdFilms});
@@ -58,7 +73,17 @@ module.exports = {
 
   async updateFilms(req, res){
 
-    const {title, actors, year, director, details} = req.body;
+    const {
+      title, 
+      year, 
+      description, 
+      actors, 
+      type, 
+      logo, 
+      thumb, 
+      gender, 
+      moments
+    } = req.body;
     const {id} = req.params;
 
     try {
@@ -70,10 +95,14 @@ module.exports = {
 
       const updatedfilms = await Films.findByIdAndUpdate(id, {
         title, 
-        actors, 
         year, 
-        director,
-        details
+        description, 
+        actors, 
+        type, 
+        logo, 
+        thumb, 
+        gender, 
+        moments
       }, {new: true});
 
       return res.status(200).json({message: 'Films updated by id successfully.', updatedfilms});

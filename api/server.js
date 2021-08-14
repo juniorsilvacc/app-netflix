@@ -1,22 +1,10 @@
-require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const morgan = require('morgan');
 const cors = require('cors');
+const database = require('./src/services/database');
 const routes = require('./src/routes');
 
 const app = express();
-
-mongoose.connect(process.env.DATABASE, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-});
-mongoose.Promise = global.Promise;
-mongoose.connection.on('error', (error) => {
-  console.log("Erro: ", error.message);
-});
 
 app.use(cors());
 
