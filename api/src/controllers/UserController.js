@@ -7,10 +7,15 @@ module.exports = {
 
     try {
 
+      const emailExists = await User.findOne({email})
+      if(emailExists){
+        return res.status(400).json({message: 'E-mail does exist.'});
+      }
+
       const createUser = await User.create({
         email,
         password
-      })
+      });
 
       return res.status(200).json({message: 'Successfully registered user.', data: createUser});
       

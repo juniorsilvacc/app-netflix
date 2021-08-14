@@ -9,7 +9,7 @@ module.exports = {
 
       const validEmail = await User.findOne({email});
       if(!validEmail){
-        return res.status(400).json({message: 'E-mail does not exist.'})
+        return res.status(400).json({message: 'E-mail does not exist.'});
       }
 
       const validPassword = await User.findOne({
