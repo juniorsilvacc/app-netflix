@@ -7,6 +7,7 @@ import Header from '../../components/Header';
 import Hero from '../../components/Hero';
 import ButtonVertical from '../../components/ButtonVerticalHero';
 import Previas from '../../components/Previas';
+import Session from '../../components/Session';
 
 import styles from './styles';
 
@@ -36,6 +37,13 @@ const Home = () => {
         <View style={styles.previaContainer}>
           <Title style={styles.previaTitle}>Prévias</Title>
           <Previas/>
+        </View>
+
+        <View>
+
+          {[1,2,3,4].map((session, index) => (
+            <Session key={index} />
+          ))}
         </View>
 
       </ScrollView>

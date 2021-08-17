@@ -2,7 +2,6 @@ const database = require('../services/database');
 const Films = require('../models/Films');
 const Season = require('../models/Season');
 const Episode = require('../models/Episode');
-const filmsJSON = require('../data/films.json');
 
 const addFilms = async () => {
   try {
