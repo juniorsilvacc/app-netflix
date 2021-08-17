@@ -19,6 +19,8 @@ const styles = StyleSheet.create({
     height: 180,
     borderRadius: 4,
     overflow: 'hidden',
+    marginBottom: 30,
+    marginTop: 10,
   },
   logo:{
     width: 100,
@@ -27,6 +29,13 @@ const styles = StyleSheet.create({
     zIndex: 10,
     bottom: 20,
     alignSelf: 'center',
+  },
+  borderTop:{
+    backgroundColor: '#E50914',
+    height: 3,
+    width: 100,
+    left: 20,
+    marginTop: 10,
   },
 });
 

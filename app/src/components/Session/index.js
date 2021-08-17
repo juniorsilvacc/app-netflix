@@ -5,12 +5,13 @@ import {Title} from 'react-native-paper';
 
 import styles from './styles';
 
-const Session = () => {
+const Session = ({hasTopBorder}) => {
   return (
     <View style={styles.container}>
+      {hasTopBorder && <View style={styles.borderTop}/>}
       <Title style={styles.sessionTitle}>Session</Title>
       <FlatList
-        style={styles.list}
+        style={styles.flatlistContainer}
         horizontal
         data={[1, 2, 3, 4, 5]}
         renderItem={({item, index}) => (

@@ -15,7 +15,7 @@ const Hero = () => {
         <Image
           style={styles.logo}
           resizeMode="contain"
-          source={{uri: 'https://i.imgur.com/8owLMuZ.png'}}
+          source={{uri: 'https://i.imgur.com/iZYZ4Oz.png'}}
         />
 
         <View style={styles.containertop10}>
