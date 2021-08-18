@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
 import React, {useState} from 'react';
-import {View, Image, Text, TouchableOpacity} from 'react-native';
+import {View, Image, Text} from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 
 import styles from './styles';
 
-const Login = () => {
+const Login = ({navigation}) => {
 
   const [credenciais, setCredenciais] = useState({
     email: '',
@@ -37,7 +37,9 @@ const Login = () => {
 
         <Button
           mode="contained"
-          onPress={() => console.log('Pressed')}
+          onPress={() => {
+            navigation.navigate('Home');
+          }}
         >
           Entrar
         </Button>

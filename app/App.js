@@ -3,9 +3,7 @@ import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 
 import {StatusBar} from 'react-native';
 
-import Login from './src/pages/Login';
-import Home from './src/pages/Home';
-import Films from './src/pages/Films';
+import Routes from './routes';
 
 function App() {
   const theme = {
@@ -22,7 +20,7 @@ function App() {
   return (
     <PaperProvider theme={theme}>
       <StatusBar backgroundColor="#000" />
-      <Films />
+      <Routes />
     </PaperProvider>
   );
 }

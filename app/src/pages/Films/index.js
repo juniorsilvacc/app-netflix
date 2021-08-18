@@ -1,15 +1,19 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, ScrollView, ImageBackground, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Button, Caption } from 'react-native-paper';
 
 import ButtonVertical from '../../components/ButtonVerticalFilms';
 import Session from '../../components/Session';
+import SessionSerie from '../../components/SessionSerie';
 
 import styles from './styles';
 
 const Films = () => {
+
+  const [type] = useState('serie');
+
   return (
     <>
       <ScrollView style={styles.container}>
@@ -43,7 +47,7 @@ const Films = () => {
           </Text>
 
           <View style={styles.viewTitles}>
-            <Caption>
+            <Caption style={{lineHeight: 14}}>
               Elenco <Caption style={styles.titleText}>Vince Vaughn, Like Pegler, Firass Dirani</Caption>{' '}
               Gêneros <Caption style={styles.titleText}>Filmes baseados na vida real, Dramas, Dramas militares.</Caption>{' '}
               Cenas e momentos <Caption style={styles.titleText}>Violentos, Aqui tudo é possível, Comoventes</Caption>
@@ -57,7 +61,11 @@ const Films = () => {
             <ButtonVertical icon="download" text="Baixar" />
           </View>
 
-         <Session hasTopBorder/>
+
+          {type === 'filme' && <Session hasTopBorder/>}
+          {type === 'serie' &&
+            <SessionSerie/>
+          }
 
         </View>
 
